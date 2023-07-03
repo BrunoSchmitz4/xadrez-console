@@ -1,10 +1,46 @@
 ﻿using System.Diagnostics;
 using tabuleiro;
 using xadrez;
+using System;
+using System.Collections.Generic;
+
 namespace xadrez_console
 {
     class Tela
     {
+
+        public static void imprimirPartida(PartidaDeXadrez partida)
+        {
+            imprimirTabuleiro(partida.tab);
+            imprimirPecasCapturadas(partida);
+            Console.WriteLine("\nTurno: " + partida.turno);
+            Console.WriteLine("Aguardando jogada das peças " + partida.JogadorAtual);
+
+        }
+
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
+        {
+            Console.WriteLine("\n[-_-_-_-_-_-_-_-_-]");
+            Console.WriteLine("Peças capturadas: ");
+            Console.Write("Brancas: ");
+            imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+            Console.Write("\nPretas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
+            Console.ForegroundColor = aux;
+            Console.WriteLine("\n[-_-_-_-_-_-_-_-_-]");
+        }
+
+        public static void imprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach(Peca x in conjunto)
+            {
+                Console.Write(x + " | ");
+            }
+            Console.Write("]");
+        }
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
 
