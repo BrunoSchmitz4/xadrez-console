@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
 
-namespace xadrez_console.xadrez
+namespace xadrez
 {
-    class PosicaoXadrex
+    class PosicaoXadrez
     {
         public char coluna { get; set; }
         public int linha { get; set;}
 
-        public PosicaoXadrex (char coluna, int linha)
+        public PosicaoXadrez(char coluna, int linha)
         {
             this.coluna = coluna;
             this.linha = linha;
