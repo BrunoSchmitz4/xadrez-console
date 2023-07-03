@@ -7,15 +7,15 @@ using tabuleiro;
 
 namespace xadrez
 {
-    class Cavalo : Peca
-    {
-        public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
-        {
+    //class Cavalo : Peca
+    //{
+    //    public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
+    //    {
 
-        }
-        public override string ToString()
-        {
-            return "H";
-        }
-    }
+    //    }
+    //    public override string ToString()
+    //    {
+    //        return "H";
+    //    }
+    //}
 }
