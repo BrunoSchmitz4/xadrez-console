@@ -5,12 +5,12 @@ namespace xadrez_console
 {
     class Program
     {
-        // Rei - K (King)
-        // Rainha - Q (Quenn)
-        // Cavalo - H (Horse)
-        // Torre - T (Tower)
-        // Bispo - B (Bishop)
-        // Peão - P (Pawn)
+        // Rei - K (King) | - R (Rei)
+        // Rainha - Q (Quenn) - D (Dama)
+        // Cavalo - H (Horse) - C (Cavalo)
+        // Torre - T (Tower) - T (Torre)
+        // Bispo - B (Bishop) - B (Bispo)
+        // Peão - P (Pawn) - P (Peão)
         static void Main(string[] args)
         {
             try
@@ -23,6 +23,12 @@ namespace xadrez_console
 
                     Console.Write("\nOrigem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
