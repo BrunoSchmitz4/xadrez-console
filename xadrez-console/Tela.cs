@@ -17,7 +17,7 @@ namespace xadrez_console
             Console.WriteLine("Turno: " + partida.turno);
             if (!partida.terminada)
             {
-                Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
                 if (partida.xeque)
                 {
                     Console.WriteLine("XEQUE!");
@@ -26,7 +26,7 @@ namespace xadrez_console
             else
             {
                 Console.WriteLine("XEQUEMATE!");
-                Console.WriteLine("Vencedor: " + partida.JogadorAtual);
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
             }
         }
 
